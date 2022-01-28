@@ -12,6 +12,16 @@ button{
   border-radius: 5px;
   border: solid black 5px;
 }
+button.pickUp, button.delivery{
+  background-color: rgb(219,224,78);
+  color: rgb(111,70,150);
+  font-family: 'lazenby_computersmooth';
+  font-size: 24pt;
+  border-radius: 5px;
+  border: solid black 5px;
+  margin: 20px;
+  display: inline-block;
+}
 h2{
   font-family: 'lazenby_computersmooth';
   font-size: 24pt;
@@ -59,7 +69,7 @@ select{
   background-color: rgb(96,149,207);
 }
 
-.sizeColumn, .toppingsColumn{
+.sizeColumn, .toppingsColumn, .pickUpOrDelivery{
   margin: 10px;
   display: block;
   padding: 10px;
@@ -67,6 +77,7 @@ select{
   border-radius: 10px;
   text-align: center;
 }
+
 #pizzaCart{
   display: none;
   margin: 20px;
