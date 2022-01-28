@@ -26,15 +26,33 @@ button{
   font-family: 'lazenby_computersmooth';
   font-size: 24pt;
   margin: auto;
-  max-width: 30%;
-  display: block;
+  max-width: 50%;
+  display: inline-block;
   border-radius: 5px;
+
+}
+.sizeColumn{
+  width: 50%;
+  margin: 20px;
+  float: left;
+}
+.toppingsColumn{
+  float:left;
+  width: 50%;
+  margin: 20px;
 
 }
 #pizzaCart{
   display: none;
+  margin: 20px;
+  width: 30%;
 }
-
 #pizzaCart li{
   list-style-image: url(/img/pizza.png);
+}
+div#pizzaSize{
+  background-color: rgb(111,70,150);
+}
+div#pizzaToppings{
+  background-color:rgb(219,224,78);
 }
