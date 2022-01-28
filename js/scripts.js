@@ -62,10 +62,18 @@ function displayCart(cartToDisplay){
   let pizzasList = $("ul#pizzas");
   let htmlForPizzas = "";
   Object.keys(cartToDisplay.pizzas).forEach(function(key){
-    const pizza = cartToDisplay.findContact(key);
-    htmlForContactInfo += "<li id=" + pizza.id + ">" + pizza.size + " " + pizza.totalCost + "</li>";
+    const pizza = cartToDisplay.findPizza(key);
+    htmlForPizzas += "<li id=" + pizza.id + ">" + pizza.size + " " + pizza.totalCost + "</li>";
   });
   pizzasList.html(htmlForPizzas);
+}
+function uncheckIngredients(){
+  const checkedToppings = $("input:checkbox[name=ingredient]").each(function(){
+    if($("input:checkbox[name=ingredient]").prop('checked', true)){
+      $("input:checkbox[name=ingredient]").prop('checked', false);
+    }
+ })
+
 }
 
 $(document).ready(function(){
@@ -73,8 +81,11 @@ $(document).ready(function(){
     event.preventDefault();
     const inputtedSize = $("select#pizzaSize option:selected").val();
     const inputtedToppings = getToppings();
-    let pizza = new Pizza(inputtedToppings, inputtedSize);
+    let pizza = new Pizza(inputtedToppings, inputtedSize)
     console.log(pizza.pizzaCost(pizza.inputtedSize, pizza.inputtedToppings));
+    pizzaCart.addPizza(pizza);
+    displayCart(pizzaCart);
+    uncheckIngredients();
   })
 })
 
