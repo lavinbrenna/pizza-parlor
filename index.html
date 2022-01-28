@@ -5,8 +5,54 @@
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <script src="js/jquery-3.6.0.js"></script>
   <script src="js/scripts.js"></script>
-  <title>Pizza Pie in tha Sky</title>
+  <title>Pizza Planet</title>
 </head>
 <body>
+  <div class="container">
+    <div class="jumbotron">
+      <h3>Pizza Planet</h3>
+    </div>
+    <form id="pizzaForm">
+      <div class="form-group" id="pizzaSize">
+        <label for="pizzaSize">Please select your size:</label>
+        <select id="pizzaSize">
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
+      </div>
+      <div class="form-group" id="pizzaToppings">
+        <label for="pizzaToppings">Please select your toppings:</label><br>
+        <label for="cheese">Cheeses:</label><br>
+        <input type="checkbox" name="extra cheese" id="extraCheese">
+        <label for="extraCheese">Extra Cheese</label><br>
+        <input type="checkbox" name="vegan cheese" id="veganCheese">
+        <label for="veganCheese">Vegan Cheese</label><br>
+        <label for="meats">Meats:</label><br>
+        <input type="checkbox" name="pepperoni" id="pepperoni">
+        <label for="pepperoni">Pepperoni</label><br>
+        <input type="checkbox" name="sausage" id="sausage">
+        <label for="sausage">Sausage</label><br>
+        <input type="checkbox" name="ham" id="ham">
+        <label for="ham">Ham</label><br>
+        <input type="checkbox" name="vegetarian pepperoni" id="vegetarianPepperoni">
+        <label for="vegetarianPepperoni">Vegetarian Pepperoni</label><br>
+        <label for="vegetables">Veggies:</label><br>
+        <input type="checkbox" name="pineapple" id="pineapple">
+        <label for="pineapple">Pineapple</label><br>
+        <input type="checkbox" name="black olives" id="blackOlives">
+        <label for="blackOlives">Black Olives</label><br>
+        <input type="checkbox" name="onion" id="onion">
+        <label for="onion">Onion</label><br>
+        <input type="checkbox" name="green pepper" id="greenPepper">
+        <label for="greenPepper">Green Pepper</label><br>
+        <input type="checkbox" name="jalepeno" id="jalepeno">
+        <label for="jalepeno">Jalepeno</label><br>
+        <input type="checkbox" name="artichoke" id="artichoke">
+        <label for="artichoke">Artichokes</label><br>
+      </div>
+      <button type="submit">Add to cart</button>
+    </form>
+  </div>
 </body>
 </html>
