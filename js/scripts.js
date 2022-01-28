@@ -14,6 +14,13 @@ PizzaCart.prototype.addPizza = function(pizza){
   this.pizzas[pizza.id] = pizza;
   this.cartTotal += pizza.pizzaCost(pizza.toppings, pizza.size);
 }
+PizzaCart.prototype.findPizza = function(id){
+  if(this.pizzas[id]!= undefined){
+    return this.pizzas[id];
+  }
+  return false;
+}
+
 function Pizza(toppings, size){
   this.toppings = toppings;
   this.size = size;
@@ -50,9 +57,13 @@ function getToppings(){
  return toppings;
 }
 
-function displayCart(){
-  
-}
+/*function displayCart(cartToDisplay){
+  let pizzasList = $("ul#pizzas");
+  let htmlForPizzas = "";
+  Object.keys(cartToDisplay.pizzas).forEach(function(key){
+    const pizza = 
+  })
+}*/
 
 $(document).ready(function(){
   $("form#pizzaForm").submit(function(){

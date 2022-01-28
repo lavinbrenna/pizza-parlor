@@ -83,6 +83,13 @@ pizzaCart.assignId()
 Expected Output:
 pizzaCart{}
 
+Description: findPizza()
+
+Test: "It should find pizza based on id number"
+Code:
+pizzaCart.findPizza(1)
+Expected Output:
+pizza{['extra cheese','pepperoni','onion', 'medium', 13.5, 1]}
 ## License
 
 MIT License
