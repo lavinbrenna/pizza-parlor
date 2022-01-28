@@ -62,10 +62,13 @@ function getToppings(){
 function displayCart(cartToDisplay){
   $("#pizzaCart").show();
   let pizzasList = $("ul#pizzas");
+  let buttons = $("#buttons");
+  buttons.empty();
   let htmlForPizzas = "";
   Object.keys(cartToDisplay.pizzas).forEach(function(key){
     const pizza = cartToDisplay.findPizza(key);
-    htmlForPizzas += "<li id=" + pizza.id + ">" + pizza.size + " pizza with: "+ pizza.toppings+ " : $" + pizza.totalCost.toFixed(2) + "</li>";
+    htmlForPizzas += "<li id=" + pizza.id + ">" + pizza.size + " pizza with: "+ pizza.toppings+ " - $" + pizza.totalCost.toFixed(2) + "</li>" + "<button class='deleteButton' id="  + pizza.id + ">Delete</button>" ;
+    buttons.append();
   });
   pizzasList.html(htmlForPizzas);
 }

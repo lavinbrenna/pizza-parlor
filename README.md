@@ -91,13 +91,21 @@ getToppings()
 Expected Output:
 ["extra cheese", "pepperoni"]
 
-Description uncheckToppings()
+Description: uncheckToppings()
 
 Test: "It should uncheck checkboxes when adding a pizza to pizzaCart"
 Code:
 uncheckToppings();
 Expected Output:
 unchecked boxes
+
+Description: deletePizza()
+
+Test: "It should delete a pizza with a given id from the pizzaCart"
+Code:
+pizzaCart.deletePizza(1);
+Expected Output:
+pizzaCart{pizzas:{...}, totalCost: 0}
 ## License
 
 MIT License
