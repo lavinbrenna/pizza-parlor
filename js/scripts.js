@@ -20,6 +20,14 @@ PizzaCart.prototype.findPizza = function(id){
   }
   return false;
 }
+PizzaCart.prototype.deletePizza = function(id){
+  if(this.pizzas[id] === undefined){
+    return false;
+  }
+  this.cartTotal -= this.pizzas[id].pizzaCost(this.pizzas[id].toppings, this.pizzas[id].size);
+  delete this.pizzas[id];
+  return true;
+}
 
 function Pizza(toppings, size){
   this.toppings = toppings;
@@ -34,17 +42,17 @@ Pizza.prototype.pizzaCost = function(toppings, size){
   this.totalCost = 0;
   for(let i = 0; i < toppings.length; i ++){
     this.totalCost += .50;
-    this.totalCost.toFixed(2);
+    parseFloat(this.totalCost.toFixed(2));
   }
   if(size === 'small'){
     this.totalCost += 10.00;
-    return this.totalCost.toFixed(2);
+    return parseFloat(this.totalCost.toFixed(2));
   }else if(size === 'medium'){
     this.totalCost += 12.00;
-    return this.totalCost.toFixed(2);
+    return parseFloat(this.totalCost.toFixed(2));
   }else{
     this.totalCost += 14.00;
-    return this.totalCost.toFixed(2);
+    return parseFloat(this.totalCost.toFixed(2));
   }
 }
 
@@ -80,6 +88,12 @@ function uncheckIngredients(){
  })
 
 }
+//function attachPizzaListeners(){
+//$(".deleteButton").function(){
+
+//}
+//}
+
 
 $(document).ready(function(){
   $("form#pizzaForm").submit(function(){
