@@ -33,19 +33,23 @@ _This website uses Javascript objects to take user input and display a price bas
 
 Description: Pizza()
 
-Test: "It should create a new pizza object with an array of toppings"
+Test: "It should create a new pizza object with an array of toppings and size"
 Code:
-let pizza1 = new Pizza(["extra cheese", "pepperoni","onion"]);
+et pizza1 = new Pizza(["extra cheese", "pepperoni", "onion"], "medium");
 pizza1;
 Expected Output:
-Pizza{toppings: Array(3)} toppings: (3)(["extra cheese","pepperoni","onion"])
+Pizza{toppings: Array(3), size: 'medium'}
+size: 'medium'
+toppings: (3)(["extra cheese","pepperoni","onion"])
 
-Test: "It should create a new pizza object with a size"
+Description: totalCost()
+
+Test: "It should calculate total cost based on amount of toppings and size"
 Code:
-let pizza1 = new Pizza(["extra cheese", "pepperoni", "onion"], medium);
-pizza1;
+let pizza1 = new Pizza(["extra cheese", "pepperoni", "onion"], "medium");
+pizza1.totalCost();
 Expected Output:
-Pizza{toppings: Array(3), size} toppings: (3)(["extra cheese","pepperoni","onion"], medium)
+'Your total cost is $13.50'
 
 ## License
 
