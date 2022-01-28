@@ -51,6 +51,14 @@ pizza1.totalCost();
 Expected Output:
 13.50
 
+Description: getToppings()
+
+Test: "It should get value of ingredient checkboxes and add to inputtedToppings array"
+Code:
+getToppings()
+Expected Output:
+["extra cheese", "pepperoni"]
+
 ## License
 
 MIT License

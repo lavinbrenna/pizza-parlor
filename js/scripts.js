@@ -1,3 +1,4 @@
+//Business Logic
 function Pizza(toppings, size){
   this.toppings = toppings;
   this.size = size;
@@ -24,8 +25,24 @@ Pizza.prototype.pizzaCost = function(toppings, size){
   }
 }
 
+//User Interface Logic
+
+function getToppings(){
+  const toppings = [];
+  const checkedToppings = $("input:checkbox[name=ingredient]:checked").each(function(){
+    toppings.push($(this).val());
+ })
+ return toppings;
+}
 
 
-let pizza1 = new Pizza(["cheese", "pepperoni", "onion"], "medium");
-pizza1.pizzaCost(pizza1.toppings, pizza1.size);
+$(document).ready(function(){
+  $("form#pizzaForm").submit(function(){
+    event.preventDefault();
+    const inputtedSize = $("select#pizzaSize option:selected").val();
+    const inputtedToppings = getToppings();
+    let pizza = new Pizza(inputtedToppings, inputtedSize);
+    console.log(pizza.pizzaCost(pizza.inputtedSize, pizza.inputtedToppings));
+  })
+})
 
