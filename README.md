@@ -51,14 +51,6 @@ pizza1.totalCost();
 Expected Output:
 13.50
 
-Description: getToppings()
-
-Test: "It should get value of ingredient checkboxes and add to inputtedToppings array"
-Code:
-getToppings()
-Expected Output:
-["extra cheese", "pepperoni"]
-
 Description: PizzaCart()
 
 Test: "It should create a pizza cart object with pizzas, and cartTotal"
@@ -90,6 +82,22 @@ Code:
 pizzaCart.findPizza(1)
 Expected Output:
 pizza{['extra cheese','pepperoni','onion', 'medium', 13.5, 1]}
+
+Description: getToppings()
+
+Test: "It should get value of ingredient checkboxes and add to inputtedToppings array"
+Code:
+getToppings()
+Expected Output:
+["extra cheese", "pepperoni"]
+
+Description uncheckToppings()
+
+Test: "It should uncheck checkboxes when adding a pizza to pizzaCart"
+Code:
+uncheckToppings();
+Expected Output:
+unchecked boxes
 ## License
 
 MIT License

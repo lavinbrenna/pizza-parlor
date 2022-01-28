@@ -48,6 +48,7 @@ Pizza.prototype.pizzaCost = function(toppings, size){
 }
 
 //User Interface Logic
+let pizzaCart = new PizzaCart();
 
 function getToppings(){
   const toppings = [];
@@ -57,13 +58,15 @@ function getToppings(){
  return toppings;
 }
 
-/*function displayCart(cartToDisplay){
+function displayCart(cartToDisplay){
   let pizzasList = $("ul#pizzas");
   let htmlForPizzas = "";
   Object.keys(cartToDisplay.pizzas).forEach(function(key){
-    const pizza = 
-  })
-}*/
+    const pizza = cartToDisplay.findContact(key);
+    htmlForContactInfo += "<li id=" + pizza.id + ">" + pizza.size + " " + pizza.totalCost + "</li>";
+  });
+  pizzasList.html(htmlForPizzas);
+}
 
 $(document).ready(function(){
   $("form#pizzaForm").submit(function(){
