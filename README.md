@@ -36,8 +36,17 @@ Description: Pizza()
 Test: "It should create a new pizza object with an array of toppings"
 Code:
 let pizza1 = new Pizza(["extra cheese", "pepperoni","onion"]);
+pizza1;
 Expected Output:
-Pizza{toppings:["extra cheese","pepperoni","onion"]}
+Pizza{toppings: Array(3)} toppings: (3)(["extra cheese","pepperoni","onion"])
+
+Test: "It should create a new pizza object with a size"
+Code:
+let pizza1 = new Pizza(["extra cheese", "pepperoni", "onion"], medium);
+pizza1;
+Expected Output:
+Pizza{toppings: Array(3), size} toppings: (3)(["extra cheese","pepperoni","onion"], medium)
+
 ## License
 
 MIT License
