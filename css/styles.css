@@ -45,13 +45,15 @@ select{
   font-family: 'aeroregular';
   width: 100%;
   text-align: center;
+  border: 10px solid black;
+  border-radius: 10px;
 }
 .jumbotron img{
-  width: 25%;
+  width: 20%;
+  float: left;
 }
 .jumbotron h1{
   font-size: 54pt;
-  text-decoration-line: 3px rgb(111,70,150);
 }
 .container-xl{
   background-color: rgb(96,149,207);
@@ -72,6 +74,12 @@ select{
   border: solid black 5px;
   border-radius: 10px;
   text-align:center;
+}
+#pizzaCart img{
+  width: 25%;
+}
+#pizzaCart ul{
+  list-style-position: inside;
 }
 #pizzaCart li{
   list-style-image: url(/img/pizza.png);
