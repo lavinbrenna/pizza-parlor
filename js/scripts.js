@@ -34,16 +34,17 @@ Pizza.prototype.pizzaCost = function(toppings, size){
   this.totalCost = 0;
   for(let i = 0; i < toppings.length; i ++){
     this.totalCost += .50;
+    this.totalCost.toFixed(2);
   }
   if(size === 'small'){
     this.totalCost += 10.00;
-    return this.totalCost;
+    return this.totalCost.toFixed(2);
   }else if(size === 'medium'){
     this.totalCost += 12.00;
-    return this.totalCost;
+    return this.totalCost.toFixed(2);
   }else{
     this.totalCost += 14.00;
-    return this.totalCost;
+    return this.totalCost.toFixed(2);
   }
 }
 
@@ -59,11 +60,12 @@ function getToppings(){
 }
 
 function displayCart(cartToDisplay){
+  $("#pizzaCart").show();
   let pizzasList = $("ul#pizzas");
   let htmlForPizzas = "";
   Object.keys(cartToDisplay.pizzas).forEach(function(key){
     const pizza = cartToDisplay.findPizza(key);
-    htmlForPizzas += "<li id=" + pizza.id + ">" + pizza.size + " " + pizza.totalCost + "</li>";
+    htmlForPizzas += "<li id=" + pizza.id + ">" + pizza.size + " pizza with: "+ pizza.toppings+ " : $" + pizza.totalCost.toFixed(2) + "</li>";
   });
   pizzasList.html(htmlForPizzas);
 }

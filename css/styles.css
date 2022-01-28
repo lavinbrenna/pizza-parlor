@@ -31,3 +31,6 @@ button{
   border-radius: 5px;
 
 }
+#pizzaCart{
+  display: none;
+}
