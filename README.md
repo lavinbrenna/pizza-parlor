@@ -59,6 +59,14 @@ getToppings()
 Expected Output:
 ["extra cheese", "pepperoni"]
 
+Description: PizzaCart()
+
+Test: "It should create a pizza cart object with pizzas, and cartTotal"
+Code:
+let pizzaCart1 = new PizzaCart()
+Expected Output:
+PizzaCart{pizzas:{...}, cartTotal:0}
+
 Description: addPizza()
 
 Test: "It should add all pizzas to a cart, assign ids, keep track of total price"
@@ -66,6 +74,14 @@ Code:
 pizzaCart.addPizza();
 Expected Output:
 pizzaCart{pizzas: (2)(pizza1{}, pizza2{})}
+
+Description: assignId()
+
+Test: "It should assign ids to each pizza"
+Code:
+pizzaCart.assignId()
+Expected Output:
+pizzaCart{}
 
 ## License
 

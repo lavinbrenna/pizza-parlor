@@ -1,4 +1,19 @@
 //Business Logic
+function PizzaCart(){
+  this.pizzas = {};
+  this.cartTotal = 0;
+  this.pizzaId = 0;
+}
+
+PizzaCart.prototype.assignId = function(pizza){
+  this.pizzaId += 1;
+  return this.pizzaId;
+}
+PizzaCart.prototype.addPizza = function(pizza){
+  pizza.id = this.assignId();
+  this.pizzas[pizza.id] = pizza;
+  this.cartTotal += pizza.pizzaCost(pizza.toppings, pizza.size);
+}
 function Pizza(toppings, size){
   this.toppings = toppings;
   this.size = size;
