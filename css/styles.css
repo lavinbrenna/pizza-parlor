@@ -1,3 +1,33 @@
 body{
   background-image: url('https://media.giphy.com/media/UYBDCJjwOd9Re/giphy.gif');
 }
+.jumbotron{
+  background-color: black;
+  color: rgb(219,224,78);
+  font-family: 'aeroregular';
+  width: 100%;
+  text-align: center;
+}
+.jumbotron img{
+  width: 20%;
+  float:left;
+}
+.jumbotron h1{
+  font-size: 54pt;
+  text-decoration-line: 3px rgb(111,70,150);
+}
+
+.container{
+  background-color: rgb(96,149,207);
+}
+button{
+  background-color: rgb(219,224,78);
+  color: rgb(111,70,150);
+  font-family: 'lazenby_computersmooth';
+  font-size: 24pt;
+  margin: auto;
+  max-width: 30%;
+  display: block;
+  border-radius: 5px;
+
+}

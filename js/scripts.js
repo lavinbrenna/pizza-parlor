@@ -50,6 +50,9 @@ function getToppings(){
  return toppings;
 }
 
+function displayCart(){
+  
+}
 
 $(document).ready(function(){
   $("form#pizzaForm").submit(function(){
