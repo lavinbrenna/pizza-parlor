@@ -59,6 +59,14 @@ getToppings()
 Expected Output:
 ["extra cheese", "pepperoni"]
 
+Description: addPizza()
+
+Test: "It should add all pizzas to a cart, assign ids, keep track of total price"
+Code:
+pizzaCart.addPizza();
+Expected Output:
+pizzaCart{pizzas: (2)(pizza1{}, pizza2{})}
+
 ## License
 
 MIT License
