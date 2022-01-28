@@ -38,7 +38,6 @@ function Pizza(toppings, size){
 Pizza.prototype.pizzaCost = function(toppings, size){
   size = this.size;
   toppings = this.toppings;
-  console.log(size, toppings);
   this.totalCost = 0;
   for(let i = 0; i < toppings.length; i ++){
     this.totalCost += .50;
@@ -63,37 +62,28 @@ function getToppings(){
   const toppings = [];
   const checkedToppings = $("input:checkbox[name=ingredient]:checked").each(function(){
     toppings.push($(this).val());
- })
- return toppings;
+  })
+  return toppings;
 }
 
 function displayCart(cartToDisplay){
   $("#pizzaCart").show();
   let pizzasList = $("ul#pizzas");
-  let buttons = $("#buttons");
-  buttons.empty();
   let htmlForPizzas = "";
   Object.keys(cartToDisplay.pizzas).forEach(function(key){
     const pizza = cartToDisplay.findPizza(key);
-    htmlForPizzas += "<li id=" + pizza.id + ">" + pizza.size + " pizza with: "+ pizza.toppings+ " - $" + pizza.totalCost.toFixed(2) + "</li>" + "<button class='deleteButton' id="  + pizza.id + ">Delete</button>" ;
-    buttons.append();
+    htmlForPizzas += "<li id=" + pizza.id + ">" + pizza.size + " pizza with: "+ pizza.toppings+ " - $" + pizza.totalCost.toFixed(2) + "</li>";
   });
   pizzasList.html(htmlForPizzas);
 }
+
 function uncheckIngredients(){
   const checkedToppings = $("input:checkbox[name=ingredient]").each(function(){
     if($("input:checkbox[name=ingredient]").prop('checked', true)){
       $("input:checkbox[name=ingredient]").prop('checked', false);
     }
- })
-
+  })
 }
-//function attachPizzaListeners(){
-//$(".deleteButton").function(){
-
-//}
-//}
-
 
 $(document).ready(function(){
   $("form#pizzaForm").submit(function(){
@@ -105,6 +95,7 @@ $(document).ready(function(){
     pizzaCart.addPizza(pizza);
     displayCart(pizzaCart);
     uncheckIngredients();
+    $(".orderTotal").text(parseFloat(pizzaCart.cartTotal).toFixed(2));
   })
 })
 
