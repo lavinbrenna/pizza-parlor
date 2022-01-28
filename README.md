@@ -49,7 +49,7 @@ Code:
 let pizza1 = new Pizza(["extra cheese", "pepperoni", "onion"], "medium");
 pizza1.totalCost();
 Expected Output:
-'Your total cost is $13.50'
+13.50
 
 ## License
 
