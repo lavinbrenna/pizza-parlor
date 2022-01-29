@@ -60,7 +60,14 @@ this.pizzaCustomers = {};
 this.currentId = 0;
 }
 
-function PizzaCustomer(firstName, lastName, phoneNumber,emailAddress, streetAddress, city, state, zipCode){
+function PickUpCustomer(firstName, lastName, phoneNumber, emailAddress){
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.phoneNumber = phoneNumber;
+  this.emailAddress = emailAddress;
+}
+
+function DeliveryCustomer(firstName, lastName, phoneNumber,emailAddress, streetAddress, city, state, zipCode){
   this.firstName = firstName;
   this.lastName = lastName;
   this.phoneNumber = phoneNumber;
@@ -71,9 +78,6 @@ function PizzaCustomer(firstName, lastName, phoneNumber,emailAddress, streetAddr
   this.zipCode = zipCode;
 }
 //User Interface Logic
-let pizzaCart = new PizzaCart();
-let pizzaAddress = new CustomerAddressBook();
-
 function getToppings(){
   const toppings = [];
   const checkedToppings = $("input:checkbox[name=ingredient]:checked").each(function(){
@@ -83,7 +87,7 @@ function getToppings(){
 }
 
 function displayCart(cartToDisplay){
-  $("#pizzaCart").show();
+  $("#orderCart").show();
   let pizzasList = $("ul#pizzas");
   let htmlForPizzas = "";
   Object.keys(cartToDisplay.pizzas).forEach(function(key){
@@ -102,23 +106,26 @@ function uncheckIngredients(){
 }
 function addPizzaListeners(){
   $("button.pickUp").click(function(){
-    $(".sizeColumn, .toppingsColumn, button.submit").show();
+    $(".pickUpForm, .sizeColumn, .toppingsColumn, button.submit").show();
     $(".pickUpOrDelivery").hide();
   });
   $("button.delivery").click(function(){
-    $(".sizeColumn, .toppingsColumn, button.submit").show();
+    $(".deliveryForm, .sizeColumn, .toppingsColumn, button.submit").show();
     $(".pickUpOrDelivery").hide();
   })
 }
 $(document).ready(function(){
   addPizzaListeners();
-  $(".sizeColumn, .toppingsColumn, button.submit").hide();
+  let pizzaCart = new PizzaCart();
+  console.log(pizzaCart);
+  let pizzaAddressBook = new CustomerAddressBook();
+  console.log(pizzaAddressBook);
+  $(".pickUpForm, .deliveryForm, .sizeColumn, .toppingsColumn, button.submit").hide();
   $("form#pizzaForm").submit(function(){
     event.preventDefault();
     const inputtedSize = $("select#pizzaSize option:selected").val();
     const inputtedToppings = getToppings();
-    let pizza = new Pizza(inputtedToppings, inputtedSize)
-    console.log(pizza.pizzaCost(pizza.inputtedSize, pizza.inputtedToppings));
+    let pizza = new Pizza(inputtedToppings, inputtedSize);
     pizzaCart.addPizza(pizza);
     displayCart(pizzaCart);
     uncheckIngredients();

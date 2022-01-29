@@ -69,7 +69,7 @@ select{
   background-color: rgb(96,149,207);
 }
 
-.sizeColumn, .toppingsColumn, .pickUpOrDelivery{
+.sizeColumn, .toppingsColumn, .pickUpOrDelivery, .pickUpForm, .deliveryForm{
   margin: 10px;
   display: block;
   padding: 10px;
@@ -78,7 +78,7 @@ select{
   text-align: center;
 }
 
-#pizzaCart{
+#orderCart{
   display: none;
   margin: 20px;
   padding: 20px;
@@ -86,13 +86,13 @@ select{
   border-radius: 10px;
   text-align:center;
 }
-#pizzaCart img{
+#orderCart img{
   width: 25%;
 }
-#pizzaCart ul{
+#orderCart ul{
   list-style-position: inside;
 }
-#pizzaCart li{
+#orderCart li{
   list-style-image: url(/img/pizza.png);
 }
 div#pizzaSize{
