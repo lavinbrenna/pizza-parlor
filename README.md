@@ -2,7 +2,7 @@
 
 #### By _**Brenna Lavin**_
 
-#### _Pizza ordering site_
+#### _Pizza ordering site for Toy Story's Pizza Planet_
 
 ## Technologies Used
 
@@ -14,7 +14,7 @@
 
 ## Description
 
-_This website uses Javascript objects to take user input and display a price based on the amount of toppings and size._
+_This website uses Javascript objects to take user input and display a price based on the amount of toppings and size. This website is modeled after Toy Story's Pizza Planet, and draws inspiration(and the starry gif background) from Portland's Pizza Jerk restaurant_
 
 ## Setup/Installation Requirements
 
@@ -146,6 +146,7 @@ let customer1 = new PizzaCustomer('Brenna', 'Lavin', 5035551444','brenna@lavin.c
 addressBook.addCustomer(customer1);
 Expected Output:
 AddressBook{customers:{customer1}, currentId:1}
+
 ## License
 
 MIT License
