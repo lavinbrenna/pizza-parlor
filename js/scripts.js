@@ -95,6 +95,9 @@ function DeliveryCustomer(firstName, lastName, phoneNumber,emailAddress, streetA
 }
 
 //User Interface Logic
+let pizzaCart = new PizzaCart();
+let pizzaAddressBook = new CustomerAddressBook();
+
 function getToppings(){
   const toppings = [];
   const checkedToppings = $("input:checkbox[name=ingredient]:checked").each(function(){
@@ -114,6 +117,11 @@ function displayCart(cartToDisplay){
   pizzasList.html(htmlForPizzas);
 }
 
+function showPizza(pizzaId){
+  const pizza = pizzaCart.findPizza(pizzaId);
+  $("#show-pizza").toggle();
+  $(".toppings").html(pizza.toppings.join(", "));
+}
 function uncheckIngredients(){
   const checkedToppings = $("input:checkbox[name=ingredient]").each(function(){
     if($("input:checkbox[name=ingredient]").prop('checked', true)){
@@ -121,34 +129,6 @@ function uncheckIngredients(){
     }
   })
 }
-function addPizzaListeners(){
-  $("button.pickUp").click(function(){
-    $(".pickUpForm").show();
-    $(".pickUpOrDelivery").hide();
-  });
-  $("button.delivery").click(function(){
-    $(".deliveryForm").show();
-    $(".pickUpOrDelivery").hide();
-  })
-  $("button#pSaveCustomer").click(function(){
-    let pizzaAddressBook = new CustomerAddressBook();
-    pizzaAddressBook.addCustomer(savePickUpCustomer());
-    $(".sizeColumn, .toppingsColumn, button.submit").show();
-    $(".pickUpForm, .deliveryForm").hide();
-    console.log('pickup');
-    console.log(pizzaAddressBook);
-    console.log(pizzaAddressBook.pizzaCustomers);
-    })
-  $("button#saveCustomer").click(function(){
-    let pizzaAddressBook = new CustomerAddressBook();
-    pizzaAddressBook.addCustomer(saveDeliveryCustomer());
-    $(".sizeColumn, .toppingsColumn, button.submit").show();
-    $(".pickUpForm, .deliveryForm").hide();
-    console.log('delivery');
-    console.log(pizzaAddressBook);
-    console.log(pizzaAddressBook.pizzaCustomers);
-    })
-  }
 
 function saveDeliveryCustomer(){
   const inputtedFirstName = $("input#firstName").val();
@@ -172,9 +152,32 @@ function savePickUpCustomer(){
   return customer;
 }
 
+function addPizzaListeners(){
+  $("button.pickUp").click(function(){
+    $(".pickUpForm").show();
+    $(".pickUpOrDelivery").hide();
+  });
+  $("button.delivery").click(function(){
+    $(".deliveryForm").show();
+    $(".pickUpOrDelivery").hide();
+  })
+  $("button#pSaveCustomer").click(function(){
+    pizzaAddressBook.addCustomer(savePickUpCustomer());
+    $(".sizeColumn, .toppingsColumn, button.submit").show();
+    $(".pickUpForm, .deliveryForm").hide();
+    })
+  $("button#saveCustomer").click(function(){
+    pizzaAddressBook.addCustomer(saveDeliveryCustomer());
+    $(".sizeColumn, .toppingsColumn, button.submit").show();
+    $(".pickUpForm, .deliveryForm").hide();
+    })
+  $("ul#pizzas").on('click','li', function(){
+    showPizza(this.id);
+  })
+  }
+
 $(document).ready(function(){
   addPizzaListeners();
-  let pizzaCart = new PizzaCart();
   $(".pickUpForm, .deliveryForm, .sizeColumn, .toppingsColumn, button.submit").hide();
   $("form#pizzaForm").submit(function(){
     event.preventDefault();
