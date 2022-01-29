@@ -55,6 +55,14 @@ Pizza.prototype.pizzaCost = function(toppings, size){
   }
 }
 
+function CustomerAddressBook(){
+this.pizzaCustomers = {};
+this.currentId = 0;
+}
+
+//function pizzaCustomer(){
+
+//}
 //User Interface Logic
 let pizzaCart = new PizzaCart();
 

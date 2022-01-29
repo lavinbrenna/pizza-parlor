@@ -107,7 +107,7 @@ pizzaCart.deletePizza(1);
 Expected Output:
 pizzaCart{pizzas:{...}, totalCost: 0}
 
-Description: AddressBook()
+Description: CustomerAddressBook()
 
 Test: "It should create an empty address book for holding customer information"
 Code:
@@ -115,6 +115,13 @@ let addressBook = new AddressBook();
 Expected Output:
 AddressBook{customers:{...}, currentId:0}
 
+Description: PizzaCustomer()
+
+Test: "It should create a new pizza customer object";
+Code:
+let customer1 = new PizzaCustomer('Brenna', 'Lavin', 5035551444', '1234 ne emerson', 'portland', 'or', '97211');
+Expected Output:
+PizzaCustomer(firstName: 'Brenna', lastName: 'Lavin', phoneNumber:'5035551444', streetAddress: '1234 ne emerson', city: 'portland', state:'or', zip:'97211')
 ## License
 
 MIT License
