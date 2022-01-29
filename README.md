@@ -131,6 +131,15 @@ let customer1 = new PizzaCustomer('Brenna', 'Lavin', 5035551444','brenna@lavin.c
 addressBook.assignCustomerId(customer1);
 Expected Output:
 AddressBook{customers:{...}, currentId:1}
+
+Description addCustomer()
+
+Test: "It should add a customer to the customer address book object"
+Code:
+let customer1 = new PizzaCustomer('Brenna', 'Lavin', 5035551444','brenna@lavin.com' '1234 ne emerson', 'portland', 'or', '97211');
+addressBook.addCustomer(customer1);
+Expected Output:
+AddressBook{customers:{customer1}, currentId:1}
 ## License
 
 MIT License
