@@ -1,4 +1,4 @@
-# _Pizza Pie in the Sky_
+# _Pizza Planet Site_
 
 #### By _**Brenna Lavin**_
 
@@ -104,6 +104,15 @@ Code:
 pizzaCart.deletePizza(1);
 Expected Output:
 pizzaCart{pizzas:{...}, totalCost: 0}
+
+Description: AddressBook()
+
+Test: "It should create an empty address book for holding customer information"
+Code:
+let addressBook = new AddressBook();
+Expected Output:
+AddressBook{customers:{...}, currentId:0}
+
 ## License
 
 MIT License
