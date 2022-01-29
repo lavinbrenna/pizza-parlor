@@ -60,11 +60,19 @@ this.pizzaCustomers = {};
 this.currentId = 0;
 }
 
-//function pizzaCustomer(){
-
-//}
+function PizzaCustomer(firstName, lastName, phoneNumber,emailAddress, streetAddress, city, state, zipCode){
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.phoneNumber = phoneNumber;
+  this.emailAddress = emailAddress;
+  this.streetAddress = streetAddress;
+  this.city = city;
+  this.state = state;
+  this.zipCode = zipCode;
+}
 //User Interface Logic
 let pizzaCart = new PizzaCart();
+let pizzaAddress = new CustomerAddressBook();
 
 function getToppings(){
   const toppings = [];

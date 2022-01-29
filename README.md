@@ -119,9 +119,9 @@ Description: PizzaCustomer()
 
 Test: "It should create a new pizza customer object";
 Code:
-let customer1 = new PizzaCustomer('Brenna', 'Lavin', 5035551444', '1234 ne emerson', 'portland', 'or', '97211');
+let customer1 = new PizzaCustomer('Brenna', 'Lavin', 5035551444','brenna@lavin.com' '1234 ne emerson', 'portland', 'or', '97211');
 Expected Output:
-PizzaCustomer(firstName: 'Brenna', lastName: 'Lavin', phoneNumber:'5035551444', streetAddress: '1234 ne emerson', city: 'portland', state:'or', zip:'97211')
+PizzaCustomer(firstName: 'Brenna', lastName: 'Lavin', phoneNumber:'5035551444',emailAddress: 'brenna@lavin.com', streetAddress: '1234 ne emerson', city: 'portland', state:'or', zip:'97211')
 ## License
 
 MIT License
