@@ -122,6 +122,15 @@ Code:
 let customer1 = new PizzaCustomer('Brenna', 'Lavin', 5035551444','brenna@lavin.com' '1234 ne emerson', 'portland', 'or', '97211');
 Expected Output:
 PizzaCustomer(firstName: 'Brenna', lastName: 'Lavin', phoneNumber:'5035551444',emailAddress: 'brenna@lavin.com', streetAddress: '1234 ne emerson', city: 'portland', state:'or', zip:'97211')
+
+Description assignCustomerId()
+
+Test: "It should assign an id to each customer object";
+Code:
+let customer1 = new PizzaCustomer('Brenna', 'Lavin', 5035551444','brenna@lavin.com' '1234 ne emerson', 'portland', 'or', '97211');
+addressBook.assignCustomerId(customer1);
+Expected Output:
+AddressBook{customers:{...}, currentId:1}
 ## License
 
 MIT License

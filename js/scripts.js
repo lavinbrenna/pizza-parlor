@@ -1,4 +1,6 @@
 //Business Logic
+
+//Pizza logic
 function PizzaCart(){
   this.pizzas = {};
   this.cartTotal = 0;
@@ -55,10 +57,24 @@ Pizza.prototype.pizzaCost = function(toppings, size){
   }
 }
 
+
+//Customer Logic
+
 function CustomerAddressBook(){
 this.pizzaCustomers = {};
-this.currentId = 0;
+this.customerId = 0;
 }
+
+CustomerAddressBook.prototype.assignCustomerId = function(){
+  this.customerId += 1;
+  return this.customerId;
+}
+
+CustomerAddressBook.prototype.addCustomer = function(pizzaCustomer){
+  pizzaCustomer.id = this.assignCustomerId();
+  this.pizzaCustomers[pizzaCustomer.id] = pizzaCustomer;
+}
+
 
 function PickUpCustomer(firstName, lastName, phoneNumber, emailAddress){
   this.firstName = firstName;
@@ -66,6 +82,7 @@ function PickUpCustomer(firstName, lastName, phoneNumber, emailAddress){
   this.phoneNumber = phoneNumber;
   this.emailAddress = emailAddress;
 }
+
 
 function DeliveryCustomer(firstName, lastName, phoneNumber,emailAddress, streetAddress, city, state, zipCode){
   this.firstName = firstName;
@@ -77,6 +94,11 @@ function DeliveryCustomer(firstName, lastName, phoneNumber,emailAddress, streetA
   this.state = state;
   this.zipCode = zipCode;
 }
+
+
+
+
+
 //User Interface Logic
 function getToppings(){
   const toppings = [];
