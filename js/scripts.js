@@ -70,9 +70,9 @@ CustomerAddressBook.prototype.assignCustomerId = function(pizzaCustomer){
   return this.customerId;
 }
 
-CustomerAddressBook.prototype.addCustomer = function(customer){
-  customer.id = this.assignCustomerId();
-  this.pizzaCustomers[customer.id] = customer;
+CustomerAddressBook.prototype.addCustomer = function(pizzaCustomer){
+  pizzaCustomer.id = this.assignCustomerId();
+  this.pizzaCustomers[pizzaCustomer.id] = pizzaCustomer;
 }
 
 
@@ -130,17 +130,27 @@ function addPizzaListeners(){
     $(".deliveryForm").show();
     $(".pickUpOrDelivery").hide();
   })
-  $("button#saveCustomer").click(function(){
+  $("button#pSaveCustomer").click(function(){
+    let pizzaAddressBook = new CustomerAddressBook();
+    pizzaAddressBook.addCustomer(savePickUpCustomer());
     $(".sizeColumn, .toppingsColumn, button.submit").show();
     $(".pickUpForm, .deliveryForm").hide();
+    console.log('pickup');
+    console.log(pizzaAddressBook);
+    console.log(pizzaAddressBook.pizzaCustomers);
+    })
+  $("button#saveCustomer").click(function(){
     let pizzaAddressBook = new CustomerAddressBook();
-    let customer = saveCustomer();
-    pizzaAddressBook.addCustomer(customer);
-  })
-}
+    pizzaAddressBook.addCustomer(saveDeliveryCustomer());
+    $(".sizeColumn, .toppingsColumn, button.submit").show();
+    $(".pickUpForm, .deliveryForm").hide();
+    console.log('delivery');
+    console.log(pizzaAddressBook);
+    console.log(pizzaAddressBook.pizzaCustomers);
+    })
+  }
 
-function saveCustomer(){
-  let customer;
+function saveDeliveryCustomer(){
   const inputtedFirstName = $("input#firstName").val();
   const inputtedLastName = $("input#lastName").val();
   const inputtedPhoneNumber = $("input#phoneNumber").val();
@@ -149,16 +159,19 @@ function saveCustomer(){
   const inputtedCity = $("input#city").val();
   const inputtedState = $("select#state option:selected").val();
   const inputtedZipCode = $("input#zipCode").val();
-  if(inputtedFirstName != "" && inputtedLastName != "" && inputtedPhoneNumber != "" && inputtedEmailAddress != "" && inputtedStreetAddress === "" && inputtedCity === "" && !inputtedState && inputtedZipCode === ""){
-    customer = new PickUpCustomer(inputtedFirstName, inputtedLastName, inputtedPhoneNumber, inputtedEmailAddress);
-    console.log('pickup');
-    return customer;
-  }else if(inputtedFirstName != "" && inputtedLastName != "" && inputtedPhoneNumber != "" && inputtedEmailAddress != "" && inputtedStreetAddress != "" && inputtedCity != "" && inputtedState && inputtedZipCode != ""){
-    customer = new DeliveryCustomer(inputtedFirstName, inputtedLastName, inputtedPhoneNumber, inputtedEmailAddress, inputtedStreetAddress, inputtedCity, inputtedState, inputtedZipCode);
-    console.log('delivery');
-    return customer;
-  }
+  customer = new DeliveryCustomer(inputtedFirstName, inputtedLastName, inputtedPhoneNumber, inputtedEmailAddress, inputtedStreetAddress, inputtedCity, inputtedState, inputtedZipCode);
+  return customer;
 }
+
+function savePickUpCustomer(){
+  const inputtedFirstName = $("input#pFirstName").val();
+  const inputtedLastName = $("input#pLastName").val();
+  const inputtedPhoneNumber = $("input#pPhoneNumber").val();
+  const inputtedEmailAddress = $("input#pEmailAddress").val();
+  customer = new PickUpCustomer(inputtedFirstName, inputtedLastName, inputtedPhoneNumber, inputtedEmailAddress);
+  return customer;
+}
+
 $(document).ready(function(){
   addPizzaListeners();
   let pizzaCart = new PizzaCart();

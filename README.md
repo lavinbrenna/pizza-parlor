@@ -115,14 +115,21 @@ let addressBook = new AddressBook();
 Expected Output:
 AddressBook{customers:{...}, currentId:0}
 
-Description: PizzaCustomer()
+Description: DeliveryCustomer()
 
-Test: "It should create a new pizza customer object";
+Test: "It should create a new delivery customer object";
 Code:
-let customer1 = new PizzaCustomer('Brenna', 'Lavin', 5035551444','brenna@lavin.com' '1234 ne emerson', 'portland', 'or', '97211');
+let customer1 = new DeliveryCustomer('Brenna', 'Lavin', '5035551444','brenna@lavin.com', '1234 ne emerson', 'portland', 'or', '97211');
 Expected Output:
 PizzaCustomer(firstName: 'Brenna', lastName: 'Lavin', phoneNumber:'5035551444',emailAddress: 'brenna@lavin.com', streetAddress: '1234 ne emerson', city: 'portland', state:'or', zip:'97211')
 
+Description: PickUpCustomer()
+
+Test: "It should create a new pickup customer object";
+Code:
+let customer1 = new PickUpCustomer('Brenna', 'Lavin', '5035551444','brenna@lavin.com');
+Expected Output:
+PizzaCustomer(firstName: 'Brenna', lastName: 'Lavin', phoneNumber:'5035551444',emailAddress: 'brenna@lavin.com', streetAddress: '1234 ne emerson', city: 'portland', state:'or', zip:'97211')
 Description assignCustomerId()
 
 Test: "It should assign an id to each customer object";
