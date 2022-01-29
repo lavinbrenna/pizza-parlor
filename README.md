@@ -21,8 +21,6 @@ _This website uses Javascript objects to take user input and display a price bas
 * _Clone repo to local machine_
 * _Navigate to index.html_
 * _Open in default browser_
-* _Else, Navigate to the following GH pages link_
-* _[GH PAGES LINK](www.github.com)_
 
 ## Known Bugs
 
