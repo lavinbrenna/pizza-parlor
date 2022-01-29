@@ -21,6 +21,8 @@ _This website uses Javascript objects to take user input and display a price bas
 * _Clone repo to local machine_
 * _Navigate to index.html_
 * _Open in default browser_
+* _Else Navigate to GH Pages Link_
+* [Pizza Planet Ordering](https://lavinbrenna.github.io/pizza-parlor/)
 
 ## Known Bugs
 
