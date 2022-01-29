@@ -26,8 +26,7 @@ _This website uses Javascript objects to take user input and display a price bas
 
 ## Known Bugs
 
-* _WIP_
-* _No known bugs_
+* _Pizza toppings do not display properly when clicking, they show under all pizzas rather than each pizza they are attributed to_
 
 ## Tests
 
