@@ -115,16 +115,6 @@ unchecked boxes
 ```
 
 ```
-Description: deletePizza()
-
-Test: "It should delete a pizza with a given id from the pizzaCart"
-Code:
-pizzaCart.deletePizza(1);
-Expected Output:
-pizzaCart{pizzas:{...}, totalCost: 0}
-```
-
-```
 Description: CustomerAddressBook()
 
 Test: "It should create an empty address book for holding customer information"

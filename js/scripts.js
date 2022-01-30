@@ -22,14 +22,6 @@ PizzaCart.prototype.findPizza = function(id){
   }
   return false;
 }
-PizzaCart.prototype.deletePizza = function(id){
-  if(this.pizzas[id] === undefined){
-    return false;
-  }
-  this.cartTotal -= this.pizzas[id].pizzaCost(this.pizzas[id].toppings, this.pizzas[id].size);
-  delete this.pizzas[id];
-  return true;
-}
 
 function Pizza(toppings, size){
   this.toppings = toppings;
