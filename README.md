@@ -30,6 +30,7 @@ _This website uses Javascript objects to take user input and display a price bas
 
 ## Tests
 
+```
 Description: Pizza()
 
 Test: "It should create a new pizza object with an array of toppings and size"
@@ -40,7 +41,9 @@ Expected Output:
 Pizza{toppings: Array(3), size: 'medium'}
 size: 'medium'
 toppings: (3)(["extra cheese","pepperoni","onion"])
+```
 
+```
 Description: totalCost()
 
 Test: "It should calculate total cost based on amount of toppings and size"
@@ -49,7 +52,9 @@ let pizza1 = new Pizza(["extra cheese", "pepperoni", "onion"], "medium");
 pizza1.totalCost();
 Expected Output:
 13.50
+```
 
+```
 Description: PizzaCart()
 
 Test: "It should create a pizza cart object with pizzas, and cartTotal"
@@ -57,7 +62,9 @@ Code:
 let pizzaCart1 = new PizzaCart()
 Expected Output:
 PizzaCart{pizzas:{...}, cartTotal:0}
+```
 
+```
 Description: addPizza()
 
 Test: "It should add all pizzas to a cart, assign ids, keep track of total price"
@@ -65,7 +72,9 @@ Code:
 pizzaCart.addPizza();
 Expected Output:
 pizzaCart{pizzas: (2)(pizza1{}, pizza2{})}
+```
 
+```
 Description: assignId()
 
 Test: "It should assign ids to each pizza"
@@ -73,7 +82,9 @@ Code:
 pizzaCart.assignId()
 Expected Output:
 pizzaCart{}
+```
 
+```
 Description: findPizza()
 
 Test: "It should find pizza based on id number"
@@ -81,7 +92,9 @@ Code:
 pizzaCart.findPizza(1)
 Expected Output:
 pizza{['extra cheese','pepperoni','onion', 'medium', 13.5, 1]}
+```
 
+```
 Description: getToppings()
 
 Test: "It should get value of ingredient checkboxes and add to inputtedToppings array"
@@ -89,7 +102,9 @@ Code:
 getToppings()
 Expected Output:
 ["extra cheese", "pepperoni"]
+```
 
+```
 Description: uncheckToppings()
 
 Test: "It should uncheck checkboxes when adding a pizza to pizzaCart"
@@ -97,7 +112,9 @@ Code:
 uncheckToppings();
 Expected Output:
 unchecked boxes
+```
 
+```
 Description: deletePizza()
 
 Test: "It should delete a pizza with a given id from the pizzaCart"
@@ -105,7 +122,9 @@ Code:
 pizzaCart.deletePizza(1);
 Expected Output:
 pizzaCart{pizzas:{...}, totalCost: 0}
+```
 
+```
 Description: CustomerAddressBook()
 
 Test: "It should create an empty address book for holding customer information"
@@ -113,7 +132,9 @@ Code:
 let addressBook = new AddressBook();
 Expected Output:
 AddressBook{customers:{...}, currentId:0}
+```
 
+```
 Description: DeliveryCustomer()
 
 Test: "It should create a new delivery customer object";
@@ -121,32 +142,39 @@ Code:
 let customer1 = new DeliveryCustomer('Brenna', 'Lavin', '5035551444','brenna@lavin.com', '1234 ne emerson', 'portland', 'or', '97211');
 Expected Output:
 PizzaCustomer(firstName: 'Brenna', lastName: 'Lavin', phoneNumber:'5035551444',emailAddress: 'brenna@lavin.com', streetAddress: '1234 ne emerson', city: 'portland', state:'or', zip:'97211')
+```
 
+```
 Description: PickUpCustomer()
 
 Test: "It should create a new pickup customer object";
 Code:
 let customer1 = new PickUpCustomer('Brenna', 'Lavin', '5035551444','brenna@lavin.com');
 Expected Output:
-PizzaCustomer(firstName: 'Brenna', lastName: 'Lavin', phoneNumber:'5035551444',emailAddress: 'brenna@lavin.com', streetAddress: '1234 ne emerson', city: 'portland', state:'or', zip:'97211')
+PizzaCustomer(firstName: 'Brenna', lastName: 'Lavin', phoneNumber:'5035551444',emailAddress: 'brenna@lavin.com')
+```
+
+```
 Description assignCustomerId()
 
 Test: "It should assign an id to each customer object";
 Code:
-let customer1 = new PizzaCustomer('Brenna', 'Lavin', 5035551444','brenna@lavin.com' '1234 ne emerson', 'portland', 'or', '97211');
+let customer1 = new DeliveryCustomer('Brenna', 'Lavin', 5035551444','brenna@lavin.com' '1234 ne emerson', 'portland', 'or', '97211');
 addressBook.assignCustomerId(customer1);
 Expected Output:
 AddressBook{customers:{...}, currentId:1}
+```
 
+```
 Description addCustomer()
 
 Test: "It should add a customer to the customer address book object"
 Code:
-let customer1 = new PizzaCustomer('Brenna', 'Lavin', 5035551444','brenna@lavin.com' '1234 ne emerson', 'portland', 'or', '97211');
+let customer1 = new DeliveryCustomer('Brenna', 'Lavin', 5035551444','brenna@lavin.com' '1234 ne emerson', 'portland', 'or', '97211');
 addressBook.addCustomer(customer1);
 Expected Output:
 AddressBook{customers:{customer1}, currentId:1}
-
+```
 ## License
 
 MIT License
