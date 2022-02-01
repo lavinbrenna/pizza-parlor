@@ -30,7 +30,7 @@ _This website uses Javascript objects to take user input and display a price bas
 
 ## Tests
 
-```
+```text
 Description: Pizza()
 
 Test: "It should create a new pizza object with an array of toppings and size"
@@ -43,18 +43,75 @@ size: 'medium'
 toppings: (3)(["extra cheese","pepperoni","onion"])
 ```
 
-```
+```text
 Description: totalCost()
 
-Test: "It should calculate total cost based on amount of toppings and size"
+
+Test: "It should calculate total cost based on size - small"
 Code:
-let pizza1 = new Pizza(["extra cheese", "pepperoni", "onion"], "medium");
+let pizza1 = new Pizza([""], "small");
 pizza1.totalCost();
 Expected Output:
-13.50
+10.00
+
+Test: "each topping should add .50 to total price plus the price of size -small"
+Code:
+let pizza1 = new Pizza(["extra cheese"], "small");
+pizza1.totalCost();
+Expected Output:
+10.50
+
+Test: "2 toppings should add 1.00 to total price plus base size price - small"
+Code:
+let pizza1 = new Pizza (["extra cheese", "pepperoni"], "small");
+pizza1.totalCost();
+Expected Output:
+11.00
+
+Test: "It should calculate total cost based on size - medium"
+Code:
+let pizza1 = new Pizza([""], "medium");
+pizza1.totalCost();
+Expected Output:
+12.00
+
+Test: "each topping should add .50 to total price based on size - medium"
+Code:
+let pizza1 = new Pizza(["extra cheese"], "medium");
+pizza1.totalCost();
+Expected Output:
+12.50
+
+Test: "2 toppings should add 1.00 to total price plus base size price - medium"
+Code:
+let pizza1 = new Pizza (["extra cheese", "pepperoni"], "Medium");
+pizza1.totalCost();
+Expected Output:
+13.00
+
+Test: "It should calculate total cost based on size - large"
+Code:
+let pizza1 = new Pizza([""], "large");
+pizza1.totalCost();
+Expected Output:
+14.00
+
+Test: "each topping should add .50 to total price based on size - large"
+Code:
+let pizza1 = new Pizza(["extra cheese"], large);
+pizza1.totalCost();
+Expected Output:
+14.50
+
+Test: "2 toppings should add 1.00 to total price plus base size price - large"
+Code:
+let pizza1 = new Pizza (["extra cheese", "pepperoni"], "small");
+pizza1.totalCost();
+Expected Output:
+15.00
 ```
 
-```
+```text
 Description: PizzaCart()
 
 Test: "It should create a pizza cart object with pizzas, and cartTotal"
@@ -64,7 +121,7 @@ Expected Output:
 PizzaCart{pizzas:{...}, cartTotal:0}
 ```
 
-```
+```text
 Description: addPizza()
 
 Test: "It should add all pizzas to a cart, assign ids, keep track of total price"
@@ -74,7 +131,7 @@ Expected Output:
 pizzaCart{pizzas: (2)(pizza1{}, pizza2{})}
 ```
 
-```
+```text
 Description: assignId()
 
 Test: "It should assign ids to each pizza"
@@ -84,7 +141,7 @@ Expected Output:
 pizzaCart{}
 ```
 
-```
+```text
 Description: findPizza()
 
 Test: "It should find pizza based on id number"
@@ -94,7 +151,7 @@ Expected Output:
 pizza{['extra cheese','pepperoni','onion', 'medium', 13.5, 1]}
 ```
 
-```
+```text
 Description: getToppings()
 
 Test: "It should get value of ingredient checkboxes and add to inputtedToppings array"
@@ -104,7 +161,7 @@ Expected Output:
 ["extra cheese", "pepperoni"]
 ```
 
-```
+```text
 Description: uncheckToppings()
 
 Test: "It should uncheck checkboxes when adding a pizza to pizzaCart"
@@ -114,7 +171,7 @@ Expected Output:
 unchecked boxes
 ```
 
-```
+```text
 Description: CustomerAddressBook()
 
 Test: "It should create an empty address book for holding customer information"
@@ -124,7 +181,7 @@ Expected Output:
 AddressBook{customers:{...}, currentId:0}
 ```
 
-```
+```text
 Description: DeliveryCustomer()
 
 Test: "It should create a new delivery customer object";
@@ -134,7 +191,7 @@ Expected Output:
 PizzaCustomer(firstName: 'Brenna', lastName: 'Lavin', phoneNumber:'5035551444',emailAddress: 'brenna@lavin.com', streetAddress: '1234 ne emerson', city: 'portland', state:'or', zip:'97211')
 ```
 
-```
+```text
 Description: PickUpCustomer()
 
 Test: "It should create a new pickup customer object";
@@ -144,7 +201,7 @@ Expected Output:
 PizzaCustomer(firstName: 'Brenna', lastName: 'Lavin', phoneNumber:'5035551444',emailAddress: 'brenna@lavin.com')
 ```
 
-```
+```text
 Description assignCustomerId()
 
 Test: "It should assign an id to each customer object";
@@ -155,7 +212,7 @@ Expected Output:
 AddressBook{customers:{...}, currentId:1}
 ```
 
-```
+```text
 Description addCustomer()
 
 Test: "It should add a customer to the customer address book object"
@@ -165,6 +222,7 @@ addressBook.addCustomer(customer1);
 Expected Output:
 AddressBook{customers:{customer1}, currentId:1}
 ```
+
 ## License
 
 MIT License

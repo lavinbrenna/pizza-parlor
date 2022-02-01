@@ -7,7 +7,7 @@ function PizzaCart(){
   this.pizzaId = 0;
 }
 
-PizzaCart.prototype.assignId = function(pizza){
+PizzaCart.prototype.assignId = function(){
   this.pizzaId += 1;
   return this.pizzaId;
 }
@@ -57,7 +57,7 @@ this.pizzaCustomers = {};
 this.customerId = 0;
 }
 
-CustomerAddressBook.prototype.assignCustomerId = function(pizzaCustomer){
+CustomerAddressBook.prototype.assignCustomerId = function(){
   this.customerId += 1;
   return this.customerId;
 }
